@@ -1,2 +1,2 @@
-# jeremyzhang1.github.io
+# Jeremy Zhang's Website
 Testing Website
