@@ -1,2 +1,2 @@
 # Jeremy Zhang's Website
-Testing Website and Project Hosting
+This is my website for hosting projects.
