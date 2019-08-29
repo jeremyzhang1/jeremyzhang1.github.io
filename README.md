@@ -1,2 +1,2 @@
 # Jeremy Zhang's Website
-Testing Website
+Testing Website and Project Hosting
