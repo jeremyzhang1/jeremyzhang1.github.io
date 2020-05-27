@@ -1,2 +1,4 @@
 # Jeremy Zhang's Website
-This is my website for hosting projects.
+This is currently a work in progress.
+
+The website will look cool by the end of the summer.
