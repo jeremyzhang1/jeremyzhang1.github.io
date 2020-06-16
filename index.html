@@ -1,92 +1,77 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
-    <link rel="canonical" href="https://getbootstrap.com/docs/3.4/examples/cover/">
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jeremy Zhang</title>
+        <meta name="viewport" content="width-device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
 
-    <title>Jeremy Zhang</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="stylesheet" href="cover.css">
-    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-
-  <body>
-
-    <div class="site-wrapper">
-
-      <div class="site-wrapper-inner">
-
-        <div class="cover-container">
-
-          <div class="masthead clearfix">
-            <div class="inner">
-              <h3 class="masthead-brand">Jeremy Zhang</h3>
-              <nav>
-                <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="projects.html">Projects</a></li>
-                  <li><a href="resume.html">Resume</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                </ul>
-              </nav>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data target="#navbar-collapse-main">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Jeremy Zhang</a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-collapse-main">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a class="active" href="index.html">Home</a></li>
+                        <li><a href="#About">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="#">Resume</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-          </div>
+        </nav>
 
-          <div class="inner cover">
-            <h1 class="cover-heading">Jeremy Zhang</h1>
-            <p class="lead">Webiste currently under construction</p>
-            <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
-            </p>
-          </div>
-
-          <div class="mastfoot">
-            <div class="inner">
-              <a href="https://www.github.com/jeremyzhang1"><i class="fab fa-github-square"></i></a>
-              <a href="https://www.linkedin.com/in/jeremyzhang1"><i class="fab fa-linkedin"></i></a>
-              <a href="#"><i class="fas fa-envelope"></i></a>
+        <div id="home">
+            <div class="landing-text">
+                <h1>Jeremy Zhang</h1>
+                <h3>Website under construction</h3>
+                <a href="#" class="btn btn-default btn-lg">Learn More</a>
             </div>
-          </div>
-
+        </div>
+        <div id="About">
+            <div class="padding">
+                <div class="container">
+                    <div class="col-sm-6 text-center">
+                        <img src="img/face.jpg">
+                    </div>
+                    <div class="col-sm-6 text-center">
+                        <p>Placeholder for description</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-      </div>
+        <footer class="container-fluid text-center">
+            <div class="row">
+                <div class="col-sm-4">
+                    <h3>Contact</h3>
+                    <br>
+                    <h4>Our address and contact info here.</h4>
+                </div>
+                <div class="col-sm-4">
+                    <h3>Connect</h3>
+                    <a href="https://www.github.com/jeremyzhang1" class="fa fa-github-square"></a>
+                    <a href="https://www.linkedin.com//in/jeremyzhang1" class="fa fa-linkedin"></a>
+                    <a href="mailto:jeremyzhang@college.harvard.edu" class="fa fa-envelope"></a>
+                </div>
+                <div class="col-sm-4">
+                    <p>The third part</p>
+                </div>
+            </div>
+        </footer>
 
-    </div>
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
-    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
-  </body>
+    </body>
 </html>
