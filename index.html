@@ -14,7 +14,7 @@
         <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
             <div class="container-fluid">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data target="#navbar-collapse-main">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
                         <span class="sr-only">Toggle navigation</span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
@@ -24,11 +24,10 @@
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-collapse-main">
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a class="active" href="#home">Home</a></li>
-                        <li><a href="#About">About</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="#">Resume</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
@@ -38,10 +37,10 @@
             <div class="landing-text">
                 <h1>Jeremy Zhang</h1>
                 <h3>Website under construction</h3>
-                <a href="#About" class="btn btn-default btn-lg">Learn More</a>
+                <a href="#about" class="btn btn-default btn-lg">Learn More</a>
             </div>
         </div>
-        <div id="About">
+        <div id="about">
             <div class="padding">
                 <div class="container">
                     <h1>About</h1>
@@ -49,7 +48,7 @@
                         <div class="col-sm-6">
                             <img src="img/profile.jpg" class="img-responsive">
                         </div>
-                        <div class="col-sm-6 text-center">
+                        <div class="col-sm-6 text-left description">
                             <p>Placeholder for description</p>
                         </div>
                     </div>
@@ -57,32 +56,34 @@
             </div>
         </div>
 
-        <div id="Projects">
+        <div id="projects">
             <div class="padding">
                 <div class="container">
                     <h1>Projects</h1>
+                    <img src="img/colors.jpg" class="img-responsive">
                 </div>
             </div>
         </div>
         
-        <footer class="container-fluid text-center">
-            <div class="row">
-                <div class="col-sm-4">
-                    <h3>Contact</h3>
-                    <br>
-                    <h4>Our address and contact info here.</h4>
+        <div id="contact">
+            <footer class="container-fluid text-center">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h3>Contact</h3>
+                        <br>
+                        <h4>Our address and contact info here.</h4>
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>Connect</h3>
+                        <a href="https://www.github.com/jeremyzhang1" class="fa fa-github-square"></a>
+                        <a href="https://www.linkedin.com//in/jeremyzhang1" class="fa fa-linkedin"></a>
+                        <a href="mailto:jeremyzhang@college.harvard.edu" class="fa fa-envelope"></a>
+                    </div>
+                    <div class="col-sm-4">
+                        <p>The third part</p>
+                    </div>
                 </div>
-                <div class="col-sm-4">
-                    <h3>Connect</h3>
-                    <a href="https://www.github.com/jeremyzhang1" class="fa fa-github-square"></a>
-                    <a href="https://www.linkedin.com//in/jeremyzhang1" class="fa fa-linkedin"></a>
-                    <a href="mailto:jeremyzhang@college.harvard.edu" class="fa fa-envelope"></a>
-                </div>
-                <div class="col-sm-4">
-                    <p>The third part</p>
-                </div>
-            </div>
-        </footer>
-
+            </footer>
+        </div>
     </body>
 </html>
