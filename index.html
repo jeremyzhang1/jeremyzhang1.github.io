@@ -3,50 +3,56 @@
     <head>
         <title>Jeremy Zhang</title>
         <meta name="viewport" content="width-device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="css/style.css">
     </head>
 
-    <body data-spy="scroll" data-target=".navbar" data-offset="50">
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-main">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Jeremy Zhang</a>
-                </div>
-                <div class="collapse navbar-collapse" id="navbar-collapse-main">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li><a href="#home" class="active">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
+    <body data-spy="scroll" data-target="#navbarNav" data-offset="50">
+
+        <nav class="navbar navbar-expand-md fixed-top">
+
+            <a class="navbar-brand" href="#">Jeremy Zhang</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#home">Home<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
             </div>
         </nav>
 
         <div id="home">
-            <div class="landing-text">
+            
+            <div class="caption center-block text-center">
                 <h1>Jeremy Zhang</h1>
-                <h3>Website under construction</h3>
-                <a href="#about" class="btn btn-default btn-lg">Learn More</a>
+                <h3>Developer & Designer</h3>
+                <a class="btn btn-outline-light" href="#about">Learn More</a>
             </div>
+            <a href="#about"><i class="fa fa-angle-down"></i></a>
         </div>
+
         <div id="about">
             <div class="padding">
                 <div class="container">
                     <h1>About</h1>
                     <div class="row">
                         <div class="col-sm-6">
-                            <img src="img/profile.jpg" class="img-responsive">
+                            <img src="img/profile.jpg" class="img-fluid">
                         </div>
                         <div class="col-sm-6 text-left description">
                             <p>Placeholder for description</p>
@@ -60,7 +66,32 @@
             <div class="padding">
                 <div class="container">
                     <h1>Projects</h1>
-                    <img src="img/colors.jpg" class="img-responsive">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img src="img/colors.jpg" class="img-fluid">
+                        </div>
+                        <div class="col-sm-6">
+                            <p>Placeholder for description of first project.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img src="img/colors.jpg" class="img-fluid">
+                        </div>
+                        <div class="col-sm-6">
+                            <p>Placeholder for description of second project.</p>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <img src="img/colors.jpg" class="img-fluid">
+                        </div>
+                        <div class="col-sm-6">
+                            <p>Placeholder for description of third project.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -68,22 +99,18 @@
         <div id="contact">
             <footer class="container-fluid text-center">
                 <div class="row">
-                    <div class="col-sm-4">
-                        <h3>Contact</h3>
-                        <br>
-                        <h4>Our address and contact info here.</h4>
-                    </div>
-                    <div class="col-sm-4">
+                    <div class="col-sm-12">
                         <h3>Connect</h3>
                         <a href="https://www.github.com/jeremyzhang1" class="fa fa-github-square"></a>
-                        <a href="https://www.linkedin.com//in/jeremyzhang1" class="fa fa-linkedin"></a>
+                        <a href="https://www.linkedin.com//in/jeremyzhang1" class="fa fa-linkedin-square"></a>
                         <a href="mailto:jeremyzhang@college.harvard.edu" class="fa fa-envelope"></a>
                     </div>
-                    <div class="col-sm-4">
-                        <p>The third part</p>
-                    </div>
                 </div>
+                <p>Made by Jeremy Zhang</p>
             </footer>
         </div>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
     </body>
 </html>
