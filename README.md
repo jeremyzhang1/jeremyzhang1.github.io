@@ -1,4 +1,4 @@
 # Jeremy Zhang's Website
-This is currently a work in progress.
 
-The website will look cool by the end of the summer.
+Source files for my website
+Built in HTML and CSS
