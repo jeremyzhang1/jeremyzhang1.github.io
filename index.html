@@ -6,6 +6,64 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="css/style.css">
+        <script>
+            var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+        this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+        var that = this;
+        var delta = 200 - Math.random() * 100;
+
+        if (this.isDeleting) { delta /= 2; }
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+        delta = this.period;
+        this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+        this.isDeleting = false;
+        this.loopNum++;
+        delta = 500;
+        }
+
+        setTimeout(function() {
+        that.tick();
+        }, delta);
+    };
+
+    window.onload = function() {
+        var elements = document.getElementsByClassName('typewrite');
+        for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-type');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+              new TxtType(elements[i], JSON.parse(toRotate), period);
+            }
+        }
+        // INJECT CSS
+        var css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+        document.body.appendChild(css);
+    };
+        </script>
     </head>
 
     <body data-spy="scroll" data-target="#navbarNav" data-offset="50">
@@ -15,7 +73,7 @@
             <a class="navbar-brand" href="#">Jeremy Zhang</a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -37,11 +95,17 @@
         </nav>
 
         <div id="home">
-            
-            <div class="caption center-block text-center">
+            <div class="title center-block text-center">
+                <h3>Hello world, I am</h3>
                 <h1>Jeremy Zhang</h1>
-                <h3>Developer & Designer</h3>
-                <a class="btn btn-outline-light" href="#about">Learn More</a>
+                <h3>I love 
+                    <a class="typewrite" data-period="2000" data-type='[ "learning.", "coding.", "playing piano." ]'>
+                      <span class="wrap"></span>
+                    </a>
+                </h3>
+                <a href="https://www.github.com/jeremyzhang1" class="fa fa-github-square"></a>
+                <a href="https://www.linkedin.com//in/jeremyzhang1" class="fa fa-linkedin-square"></a>
+                <a href="mailto:jeremyzhang@college.harvard.edu" class="fa fa-envelope"></a> 
             </div>
             <a href="#about"><i class="fa fa-angle-down"></i></a>
         </div>
@@ -49,13 +113,26 @@
         <div id="about">
             <div class="padding">
                 <div class="container">
-                    <h1>About</h1>
+                    <h1 class="heading">About</h1>
                     <div class="row">
-                        <div class="col-sm-6">
-                            <img src="img/profile.jpg" class="img-fluid">
+                        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
+                            <img src="img/profile.jpg" class="img-fluid mx-auto rounded d-block" style="height: 400px; width: 363px; object-fit: cover;">
                         </div>
-                        <div class="col-sm-6 text-left description">
-                            <p>Placeholder for description</p>
+                        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 text-left description">
+                            <p>
+                                Hi! I'm Jeremy Zhang, a first year undergrad at Harvard pursuing a major in computer science.
+                                I'm interested in how emerging technologies can address urgent issues, and I love creating projects to help others.
+                                In my free time, I enjoy playing golf and making music.
+                            </p>
+                            <p>
+                                This semester, I will be taking:
+                            </p>
+                            <ul>
+                                <li>CS 61: Systems Programming and Machine Organization</li>
+                                <li>Math 23a: Linear Algebra and Real Analysis</li>
+                                <li>Econ 10a: Principles of Economics</li>
+                                <!---<li>Gen Ed 1001: Stories from the End of the World</li>-->
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -65,31 +142,83 @@
         <div id="projects">
             <div class="padding">
                 <div class="container">
-                    <h1>Projects</h1>
+                    <h1 class="heading">Projects</h1>
                     <div class="row">
-                        <div class="col-sm-6">
-                            <img src="img/colors.jpg" class="img-fluid">
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <div class="card">
+                                <a href="#"><img src="img/Logo3.bmp" class="card-img-top"></a>
+                                <div class="card-body">
+                                    <!--TODO: Upload Youtube video and place link here-->
+                                    <h3 class="card-title" href="https://pshscc.github.io/scannerjs">M-DAS</h3>
+                                    <p>A modular and cost-effective real-time driver alert system</p>
+                                    <p class="text-muted">Designed using Python & OpenCV</p>
+                                    <a class="card-link" href="#">Watch Video</a>
+                                    <a class="card-link" href="#">Read Paper</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            <p>Placeholder for description of first project.</p>
+                        <br>
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <div class="card">
+                                <a href="https://www.nasa.gov/feature/nasa-announces-tenth-round-of-candidates-for-cubesat-space-missions" target="_blank">
+                                    <div class="carousel slide" data-ride="carousel" data-interval="3000">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img class="d-block w-100 card-img-top" src="img/satellite.jpg">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block w-100 card-img-top" src="img/TLM.png">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block w-100 card-img-top" src="img/TLM2.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="card-body">
+                                    <!--TODO: Upload materials and update links-->
+                                    <h3 class="card-title" href="#">Beavercube</h3>
+                                    <p>Placeholder</p>
+                                    <p class="text-muted">Designed using NASA Core Flight System & C</p>
+                                    <a class="card-link" href="">Poster</a>
+                                    <a class="card-link" href="https://www.nasa.gov/feature/nasa-announces-tenth-round-of-candidates-for-cubesat-space-missions" target="_blank">NASA Announcement</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <img src="img/colors.jpg" class="img-fluid">
+                        <br>
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <div class="card">
+                                <a href="#"><img src="img/Logo3.bmp" class="card-img-top"></a>
+                                <div class="card-body">
+                                    <!--TODO: Upload Youtube video and place link here-->
+                                    <h3 class="card-title" href="https://pshscc.github.io/scannerjs">Vehicle Acceleration Prediction</h3>
+                                    <h4 class="card-subtitle mb-2 text-muted">Placeholder</h4>
+                                    <p>Designed using Python & OpenCV</p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-sm-6">
-                            <p>Placeholder for description of second project.</p>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-sm-6">
-                            <img src="img/colors.jpg" class="img-fluid">
-                        </div>
-                        <div class="col-sm-6">
-                            <p>Placeholder for description of third project.</p>
+                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <div class="card">
+                                <a href="https://pshscc.github.io/" target="_blank">
+                                    <div class="carousel slide" data-ride="carousel" data-interval="3000">
+                                        <div class="carousel-inner">
+                                            <div class="carousel-item active">
+                                                <img class="d-block w-100 card-img-top" src="img/website.png">
+                                            </div>
+                                            <div class="carousel-item">
+                                                <img class="d-block w-100 card-img-top" src="img/do1.png">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                                <div class="card-body">
+                                    <!--TODO: Upload Youtube video and place link here-->
+                                    <h3 class="card-title" href="https://pshscc.github.io" target="_blank">Plano Senior Coding Club Website</h3>
+                                    <p>A responsive, mobile-adaptive website containing an original coding curriculum and helpful links.</p>
+                                    <p class="text-muted">Designed using HTML & CSS, deployed on Github Pages</p>
+                                    <a class="card-link" href="https://pshscc.github.io" target="_blank">Link</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
