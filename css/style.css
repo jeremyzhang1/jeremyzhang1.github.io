@@ -129,15 +129,15 @@ h3 a:hover {
 
 .card-img-top {
     width: 100%;
-    height: 45vw;
-    object-fit: fill;
+    height: 25vh;
+    object-fit: cover;
 }
 
-@media (min-width: 992px){
+@media (max-width: 1280px){
     .card-img-top {
         width: 100%;
-        height: 15vw;
-        object-fit: fill;
+        height: 45vh;
+        object-fit: cover;
     }
 }
 
