@@ -1,244 +1,34 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Jeremy Zhang</title>
-        <meta name="viewport" content="width-device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <script>
-            var TxtType = function(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-    };
 
-    TxtType.prototype.tick = function() {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
+<head>
+    <title>Jeremy Zhang</title>
+    <meta name="viewport" content="width-device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
 
-        if (this.isDeleting) {
-        this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-        this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-
-        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-        var that = this;
-        var delta = 200 - Math.random() * 100;
-
-        if (this.isDeleting) { delta /= 2; }
-
-        if (!this.isDeleting && this.txt === fullTxt) {
-        delta = this.period;
-        this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-        this.isDeleting = false;
-        this.loopNum++;
-        delta = 500;
-        }
-
-        setTimeout(function() {
-        that.tick();
-        }, delta);
-    };
-
-    window.onload = function() {
-        var elements = document.getElementsByClassName('typewrite');
-        for (var i=0; i<elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-type');
-            var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-              new TxtType(elements[i], JSON.parse(toRotate), period);
-            }
-        }
-        // INJECT CSS
-        var css = document.createElement("style");
-        css.type = "text/css";
-        css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
-        document.body.appendChild(css);
-    };
-        </script>
-    </head>
-
-    <body data-spy="scroll" data-target="#navbarNav" data-offset="50">
-
-        <nav class="navbar navbar-expand-md fixed-top">
-
-            <a class="navbar-brand" href="#">Jeremy Zhang</a>
-
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#home">Home<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-
-        <div id="home">
-            <div class="title center-block text-center">
-                <h3>Hello world, I am</h3>
-                <h1>Jeremy Zhang</h1>
-                <h3>I love 
-                    <a class="typewrite" data-period="2000" data-type='[ "learning.", "coding.", "playing piano." ]'>
-                      <span class="wrap"></span>
-                    </a>
-                </h3>
-                <a href="https://www.github.com/jeremyzhang1" class="fa fa-github-square" target="_blank"></a>
-                <a href="https://www.linkedin.com/in/jeremyzhang1" class="fa fa-linkedin-square" target="_blank"></a>
-                <a href="mailto:jeremyzhang@college.harvard.edu" class="fa fa-envelope"></a> 
-            </div>
-            <a href="#about"><i class="fa fa-angle-down"></i></a>
+<body>
+    <div id="home">
+        <div class="contact-banner">
+            <p>Email Github Linkedin Twitter</p>
         </div>
+        <div class="title">
+            <h2>Hi!👋</h2>
+            <h1>I am Jeremy Zhang</h1>
+            <h3>I study computer science and <br>mathematics at Harvard.</h3>
+            <h4>I am currently building <a href="" target="_blank" rel="noreferrer">Halogen</a>, playing <a href=""
+                    target="_blank" rel="noreferrer">golf</a>, <br>and finding insanely cheap <a
+                    href="https://www.google.com">flights</a>.</h4>
+            <h4>Past: Software @ <a href="https://meta.com/" target="_blank" rel="noreferrer">Meta</a> and <a href="https://www.capitalone.com/" target="_blank"
+                    rel="noreferrer">Capital One</a></h4>
+            <h5>Projects: Ultrabet | Liminal | FedTA | Beavercube</h5>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</body>
 
-        <div id="about">
-            <div class="padding">
-                <div class="container">
-                    <h1 class="heading">About</h1>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-4 col-xl-4">
-                            <img src="img/profile.jpg" class="img-fluid mx-auto rounded d-block" style="height: 400px; width: 363px; object-fit: cover; margin-bottom: 1rem;">
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-8 col-xl-8 text-left description">
-                            <p>
-                                Hi! I'm Jeremy Zhang, a first-year at Harvard pursuing a concentration in computer science.
-                                I'm interested in how emerging technologies can address urgent issues, and I love creating projects to help others.
-                                In my free time, I enjoy playing golf and making music.
-                            </p>
-                            <p>
-                                This semester, I will be taking:
-                            </p>
-                            <ul>
-                                <li>CS 109a: Data Science 1: Introduction to Data Science</li>
-                                <li>CS 107: Systems Development for Computational Science</li>
-                                <li>CS 242: Computing at Scale</li>
-                                <li>Math 116: Real Analysis, Convexity, Optimization</li>
-                                <li>Gen Ed 1006: Music From Earth</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="projects">
-            <div class="padding">
-                <div class="container">
-                    <h1 class="heading">Projects</h1>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                            <div class="card">
-                                <a href="https://youtu.be/_ow2sJXRvxA"><img src="img/Logo3.bmp" class="card-img-top"></a>
-                                <div class="card-body">
-                                    <h3 class="card-title">A Modular and Cost-Effective Real-Time Driver Alert System</h3>
-                                    <p>Implemented and compared two different algorithms: Canny Edge Detection and Multi-Window Scanning with Perspective Transformation to detect road markings.</p>
-                                    <p class="text-muted">Designed using Python & OpenCV</p>
-                                    <a class="card-link" href="https://youtu.be/_ow2sJXRvxA" target="_blank">Watch Video</a>
-                                    <a class="card-link" href="/assets/MDAS_Paper.pdf" target="_blank">Read Paper</a>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                            <div class="card">
-                                <a href="https://www.nasa.gov/feature/nasa-announces-tenth-round-of-candidates-for-cubesat-space-missions" target="_blank">
-                                    <div class="carousel slide" data-ride="carousel" data-interval="3000">
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img class="d-block w-100 card-img-top" src="img/satellite.jpg">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img class="d-block w-100 card-img-top" src="img/TLM.png">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img class="d-block w-100 card-img-top" src="img/TLM2.png">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="card-body">
-                                    <h3 class="card-title">Beavercube</h3>
-                                    <p>Designed, prototyped, and tested software to support mission operations for a 3U Cubesat that will monitor cloud properties, ocean surface temperature, and ocean color to study Earth’s climate and weather systems.</p>
-                                    <p class="text-muted">Designed using NASA Core Flight System, Ball Aerospace COSMOS, and C</p>
-                                    <a class="card-link" href="/assets/Cubesat_Board.pdf" target="_blank">Poster</a>
-                                    <a class="card-link" href="https://www.nasa.gov/feature/nasa-announces-tenth-round-of-candidates-for-cubesat-space-missions" target="_blank">NASA Announcement</a>
-                                </div>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                            <div class="card">
-                                <a href="/assets/Vehicle_Accel_Predict_Paper.pdf"><img src="img/NNET2.JPG" class="card-img-top"></a>
-                                <div class="card-body">
-                                    <h3 class="card-title">Vehicle Acceleration Prediction</h3>
-                                    <p>Experimented with two models, multivariate regression and artificial neural networks, to predict vehicle acceleration based on training data from the US Federal Highway Administration Research and Data Exchange NGSIM Database.</p>
-                                    <p class="text-muted">Designed using Java & Microsoft Excel Data Analysis Tools</p>
-                                    <a class="card-link" href="/assets/Vehicle_Accel_Predict_Paper.pdf" target="_blank">Read Paper</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                            <div class="card">
-                                <a href="https://pshscc.github.io/" target="_blank">
-                                    <div class="carousel slide" data-ride="carousel" data-interval="3000">
-                                        <div class="carousel-inner">
-                                            <div class="carousel-item active">
-                                                <img class="d-block w-100 card-img-top" src="img/website.png">
-                                            </div>
-                                            <div class="carousel-item">
-                                                <img class="d-block w-100 card-img-top" src="img/do1.png">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </a>
-                                <div class="card-body">
-                                    <h3 class="card-title">Plano Senior Coding Club Website</h3>
-                                    <p>A responsive, mobile-adaptive website containing an original coding curriculum and helpful links.</p>
-                                    <p class="text-muted">Designed using HTML & CSS, deployed on Github Pages</p>
-                                    <a class="card-link" href="https://pshscc.github.io" target="_blank">Link</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div id="contact">
-            <footer class="container-fluid text-center">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <h3>Connect</h3>
-                        <a href="https://www.github.com/jeremyzhang1" class="fa fa-github-square" target="_blank"></a>
-                        <a href="https://www.linkedin.com/in/jeremyzhang1" class="fa fa-linkedin-square" target="_blank"></a>
-                        <a href="mailto:jeremyzhang@college.harvard.edu" class="fa fa-envelope"></a>
-                    </div>
-                </div>
-                <p>Made by Jeremy Zhang</p>
-                <p class="text-muted">Landing page background photo courtesy of NASA</p>
-            </footer>
-        </div>
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
-    </body>
 </html>

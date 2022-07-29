@@ -1,87 +1,44 @@
 html, body {
     height: 100%;
     width: 100%;
-    scroll-behavior: smooth;
-}
-
-.navbar {
-    background-color: black;
-    -webkit-box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 29px 5px rgba(0,0,0,0.75);
-    
-    font-size: 1.2em;
-}
-
-.navbar-toggler {
-    border-color:#dadada;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(213,213,213,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
-
-.navbar-toggler:hover {
-    border-color:#fff;
-}
-
-.navbar-toggler-icon:hover {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
-}
-
-.navbar-brand {
-    color:#dadada;
-}
-
-.navbar-brand:hover{
-    color: #fff;
-}
-
-.navbar-nav li a {
-    color: #dadada;
-}
-
-.navbar-nav li a:hover, 
-.navbar-nav li a.active {
-    color: #fff;
-    background: transparent;
 }
 
 .title {
-    width: 100%;
-    max-width: 100%;
+    width: 60%;
+    max-width: 60%;
     position: absolute;
-    top: 40%;
+    top: 25%;
+    left: 5%;
     z-index: 1;
-    text-shadow: 2px 2px 5px black;
 }
 
 .title h1 {
     color: white;
-    font-size: 5rem;
-    padding-bottom: 1rem;
+    font-size: 54pt;
+}
+
+.title h2 {
+    color: white;
+    font-size: 36pt;
 }
 
 .title h3 {
+    color: #FFF2CC;
+    font-size: 24pt;
+}
+
+.title h4 {
+    color: #FFF2CC;
+    font-size: 18pt;
+}
+
+.title h5 {
+    color: #FFF2CC;
+    font-size: 16pt;
+}
+
+.title a {
     color: white;
-}
-
-i.fa-angle-down {
-    font-size: 36px;
-    position: absolute;
-    bottom: 15px;
-    left: 0;
-    right: 0;
-    text-align: center;
-    z-index: 10;
-    -webkit-transition: font-size 0.3s;
-       -moz-transition: font-size 0.3s;
-         -o-transition: font-size 0.3s;
-            transition: font-size 0.3s;
-}
-
-i.fa-angle-down:hover {
-    font-size: 54px;
 }
 
 .btn {
@@ -101,7 +58,7 @@ i.fa-angle-down:hover {
     background-size: cover;
 }
 
-.padding {
+/* .padding {
     padding: 10px 0px;
 }
 
@@ -161,7 +118,7 @@ footer {
 .fa:hover {
     color: #d5d5d5;
     text-decoration: none;
-}
+} */
 
 /*IOS Landing Page Fix*/
 .landing {
