@@ -3,42 +3,62 @@ html, body {
     width: 100%;
 }
 
+.contact-banner {
+    list-style-type: none;
+    text-align: right;
+    margin: 0;
+    padding: 2% 2% 0% 0%;
+  }
+  
+  .contact-banner li {
+    color: white;
+    display: inline-block;
+    font-size: 16pt;
+    font-variant: small-caps;
+    padding: 20px;
+  }
+
 .title {
     width: 60%;
     max-width: 60%;
     position: absolute;
-    top: 25%;
+    bottom: 5%;
     left: 5%;
     z-index: 1;
 }
 
 .title h1 {
     color: white;
-    font-size: 54pt;
+    font-size: 6vw;
 }
 
 .title h2 {
     color: white;
-    font-size: 36pt;
+    font-size: 3vw;
 }
 
 .title h3 {
     color: #FFF2CC;
-    font-size: 24pt;
+    font-size: 2vw;
 }
 
 .title h4 {
     color: #FFF2CC;
-    font-size: 18pt;
+    font-size: 1.5vw;
 }
 
 .title h5 {
     color: #FFF2CC;
-    font-size: 16pt;
+    font-size: 1.3vw;
 }
 
-.title a {
+a {
     color: white;
+}
+
+a:hover {
+    color: #adadad;
+    text-decoration: none;
 }
 
 .btn {
